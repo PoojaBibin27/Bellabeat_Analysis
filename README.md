@@ -160,5 +160,32 @@ final_df %>%
 ```
 ![Plot-4](https://github.com/user-attachments/assets/d8897514-4a85-4fb0-b324-a0a017e27005)
 
+4. Daily Activity Level
+```
+final_df %>% 
+  select(VeryActiveMinutes, 
+         FairlyActiveMinutes, 
+         LightlyActiveMinutes, 
+         SedentaryMinutes) %>% 
+  summarise(across(everything(), list(sum))) %>% 
+  gather(active_level, minutes) %>% 
+  mutate(active_level = factor(active_level, 
+                               labels = c('Moderate Activity','Light Activity',
+                                          'Sedentary','Heavy Activity'))) %>% 
+  hchart('pie', hcaes(x = active_level, y = minutes)) %>% 
+  hc_title(text = "Distribution of daily activity level in minutes",
+           style = list(fontFamily = "Helvetica", fontSize = "30px"),
+           align = "center") %>% 
+  hc_tooltip(pointFormat = "<b>Value:</b> {point.y} <br>
+                 <b>Percentage</b> {point.percentage:,.2f}%") %>% 
+  hc_credits(
+    enabled = TRUE, 
+    text = "<em>Data Source: FitBit Fitness Tracker Data</em></span>",
+    style = list(fontSize = "12px", color = 'black',type = "spline")
+)
+```
+![Plot-5](https://github.com/user-attachments/assets/62feb68b-53c7-40f0-a628-3eb1efcce16a)
+
+
  
 
