@@ -41,10 +41,13 @@ I did the following preprocessing steps on the data in an Excel Sheet using Powe
 - Removed Duplicates
 - Consistent Naming across different files
 - Checked for data types of all columns
-- Checked for null values
 - Created a new column to calculate Average time in Bed not asleep using existing columns
 - Merged all relevant data into a single file and named it the "final_df"
 
+
+
+## The Analyze Phase
+[Back to Top](#Author-Pooja)
 
 
  
