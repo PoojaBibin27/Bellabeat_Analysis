@@ -34,6 +34,17 @@ Data Source: 30 participants FitBit Fitness Tracker Data from Mobius: https://ww
 The ROCCC analysis:
 The data is Reliable and Original. However, the sample size is 30. There are a lot of inconsistencies and errors. The weight CSV file is incomplete and has data only for few people. The dataset is recorded for a period of 1 month in 2016. The data is not current. 
 
+## The Process Phase
+
+I did the following preprocessing steps on the data in an Excel Sheet using PowerQuery:
+
+- Removed Duplicates
+- Consistent Naming across different files
+- Checked for data types of all columns
+- Checked for null values
+- Created a new column to calculate Average time in Bed not asleep using existing columns
+- Merged all relevant data into a single file and named it the "final_df"
+
 
 
  
