@@ -250,16 +250,16 @@ daily_use_percent %>%
 ```
 
  ![plot-7](https://github.com/user-attachments/assets/398a1b37-4962-4cfa-b880-3e061a408773)
- **Inisght: Usage is pretty low. Only 50% use the smart device regularly**
+ **Insight: Usage is pretty low. Only 50% use the smart device regularly**
 
- ##Recommendations
+ #Recommendations
 
 -**Target audience**-
 
 Primarily, women with full-time jobs (according to the hourly intensity data).
 
 
--**Ideas for the Bellabeat**-
+# Ideas for the Bellabeat
 
 -Average steps taken below CDC recommended standards. So, daily reminders in the form of Text reminders and short form exercise content
 -Wholistic recommendations: Diet, Exercise,Mental Health and Sleep
