@@ -126,6 +126,7 @@ ggplot(weekday_steps, aes(weekday, daily_steps)) +
   labs(title = "Daily steps per weekday", x= "", y = "") +
   theme(axis.text.x = element_text(angle = 45,vjust = 0.5, hjust = 1))
 ```
+![Plot-2](https://github.com/user-attachments/assets/493b88d2-7d5a-4d60-b941-277af2869674)
 
 
  
