@@ -252,7 +252,7 @@ daily_use_percent %>%
  ![plot-7](https://github.com/user-attachments/assets/398a1b37-4962-4cfa-b880-3e061a408773)
  **Insight: Usage is pretty low. Only 50% use the smart device regularly**
 
- #Recommendations
+ # Recommendations
 
 -**Target audience**-
 
