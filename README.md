@@ -128,6 +128,37 @@ ggplot(weekday_steps, aes(weekday, daily_steps)) +
 ```
 ![Plot-2](https://github.com/user-attachments/assets/493b88d2-7d5a-4d60-b941-277af2869674)
 
+3. Intensity of Activity through the week
+```
+final_df %>% 
+  select(VeryActiveDistance, 
+         ModeratelyActiveDistance, 
+         LightActiveDistance) %>% 
+  summarise(across(everything(), list(sum))) %>% 
+  gather(activities, value) %>% 
+  mutate(ratio = value / sum(value),
+         label = percent(ratio %>% round(4))) %>% 
+  mutate(activities = factor(activities, 
+                             labels = c('Light Activity','Moderate Activity', 'Heavy Activity'))) %>% 
+  ggplot(aes(x = (activities), 
+             y = value, 
+             label = label, 
+             fill = activities)) +
+  geom_bar(stat='identity') +
+  geom_label(aes(label = label), 
+             fill = "beige", 
+             colour = "black",
+             vjust = 0.5) +
+  scale_fill_brewer(palette="Accent") +
+  theme(legend.position="none") +
+  labs(
+    title = "Intensity of exercise activity",
+    x = "Activity level",
+    y = "Distance",
+    caption = 'Data Source: FitBit Fitness Tracker Data'
+)
+```
+![Plot-4](https://github.com/user-attachments/assets/d8897514-4a85-4fb0-b324-a0a017e27005)
 
  
 
