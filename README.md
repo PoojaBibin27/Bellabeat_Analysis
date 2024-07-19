@@ -264,6 +264,7 @@ Primarily, women with full-time jobs (according to the hourly intensity data).
 -Average steps taken below CDC recommended standards. So, daily reminders in the form of Text reminders and short form exercise content
 -Wholistic recommendations: Diet, Exercise,Mental Health and Sleep
 -Pre-emptive recommendations to follow a schedule. Daily Tracker linked to rewards linked to in-app purchases
+-Nudge/vibrate options from the device after sensing prolonged inactivity during the day and similarly while in bed to go to sleep
 
 
 
