@@ -103,6 +103,29 @@ final_df %>%
 ```
 ![Plot-1](https://github.com/user-attachments/assets/0cc9901e-1753-4f11-8202-98069862e43f)
 
+Correlation Coefficient : 0.45 (Mild Positive Correlation)
+```
+cor.test(final_df$TotalSteps, final_df$Calories, method = 'pearson', conf.level = 0.95)
+```
+2. Steps taken each day of the week
+```
+weekday_steps <- final_df %>%
+  mutate(weekday = weekdays(Date))
+weekday_steps$weekday <-ordered(weekday_steps$weekday, levels=c("Monday", "Tuesday", "Wednesday", "Thursday",
+                                                                "Friday", "Saturday", "Sunday"))
+weekday_steps <-weekday_steps %>%
+  group_by(weekday) %>%
+  summarize (daily_steps = mean(TotalSteps))
+
+head(weekday_steps)
+```
+```
+ggplot(weekday_steps, aes(weekday, daily_steps)) +
+  geom_col(fill = "#d62d58") +
+  geom_hline(yintercept = 7500) +
+  labs(title = "Daily steps per weekday", x= "", y = "") +
+  theme(axis.text.x = element_text(angle = 45,vjust = 0.5, hjust = 1))
+```
 
 
  
