@@ -186,7 +186,86 @@ final_df %>%
 ```
 ![image](https://github.com/user-attachments/assets/280a3261-fa29-47f4-b83b-e119a32750fe)
 
+5. Sleep Distribution
+```
+final_df %>% 
+  select(TotalMinutesAsleep) %>% 
+  drop_na() %>% 
+  mutate(sleep_quality = ifelse(TotalMinutesAsleep <= 420, 'Less than 7h',
+                                ifelse(TotalMinutesAsleep <= 540, '7h to 9h', 
+                                       'More than 9h'))) %>%
+  mutate(sleep_quality = factor(sleep_quality, 
+                                levels = c('Less than 7h','7h to 9h',
+                                           'More than 9h'))) %>% 
+  ggplot(aes(x = TotalMinutesAsleep, fill = sleep_quality)) +
+  geom_histogram(position = 'dodge', bins = 30) +
+  scale_fill_manual(values=c("tan1", "#66CC99", "lightcoral")) +
+  theme(legend.position = c(.80, .80),
+        legend.title = element_blank(),
+        legend.spacing.y = unit(0, "mm"), 
+        panel.border = element_rect(colour = "black", fill=NA),
+        legend.background = element_blank(),
+        legend.box.background = element_rect(colour = "black")) +
+  labs(
+    title = "Sleep distribution",
+    x = "Time slept (minutes)",
+    y = "Count",
+    caption = 'Data Source: FitBit Fitness Tracker Data'
+)
+```
+![Plot-6](https://github.com/user-attachments/assets/50104c29-f6c3-4c3e-af19-4ff6f6fd2070)
 
+6. Daily Use Pattern
 
- 
+```
+daily_use <- sleepDay_merged %>%
+  group_by(Id) %>%
+  summarize(days_used=sum(n())) %>%
+  mutate(user_type= case_when(
+    days_used >= 1 & days_used <= 10 ~ "low user",
+    days_used >= 11 & days_used <= 20 ~ "moderate user", 
+    days_used >= 21 & days_used <= 32 ~ "high user", 
+  ))
+
+head(daily_use)
+```
+Convert it into percentages
+```
+daily_use_percent <- daily_use %>%
+  group_by(user_type) %>%
+  summarise(total = n()) %>%
+  mutate(totals = sum(total)) %>%
+  group_by(user_type) %>%
+  summarise(total_percent = total / totals) %>%
+  mutate(labels = scales::percent(total_percent))
+
+daily_use_percent$user_type <- factor(daily_use_percent$user_type, levels = c("high user", "moderate user", "low user"))
+
+head(daily_use_percent)
+```
+Plot the data
+```
+daily_use_percent %>%
+  ggplot(aes(x = "",y = total_percent, fill = user_type)) +
+  geom_bar(stat = "identity", width = 1)+
+  coord_polar("y", start=0)+
+  theme_minimal()+
+  theme(axis.title.x= element_blank(),
+        axis.title.y = element_blank(),
+        panel.border = element_blank(), 
+        panel.grid = element_blank(), 
+        axis.ticks = element_blank(),
+        axis.text.x = element_blank(),
+        plot.title = element_text(hjust = 0.5, size=14, face = "bold")) +
+  geom_text(aes(label = labels),
+            position = position_stack(vjust = 0.5))+
+  scale_fill_manual(values = c( "#d62d58","#db7980","#fc9fb7"),
+                    labels = c("High user - 21 to 31 days",
+                               "Moderate user - 11 to 20 days",
+                               "Low user - 1 to 10 days"))+
+  labs(title="Daily use of smart device")
+```
+
+ ![plot-7](https://github.com/user-attachments/assets/398a1b37-4962-4cfa-b880-3e061a408773)
+
 
