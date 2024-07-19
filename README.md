@@ -84,7 +84,7 @@ High-Level Insights:
 - Sedentary time spent on an average was 799 minutes (~13 hours)- I guess this included the sleeping time as well
 - Average calories consumed in a day was 2323.
 
-1. Steps vs Calories: I have tried to analyse the dataset to see the relation between steps taken in a day and the calories consumed.
+1. Steps vs Calories: I have tried to analyse the dataset to see the relation between steps taken in a day and the calories burnt.
 ```
 final_df %>% 
   group_by(TotalSteps, Calories) %>% 
@@ -104,6 +104,7 @@ final_df %>%
 ![Plot-1](https://github.com/user-attachments/assets/0cc9901e-1753-4f11-8202-98069862e43f)
 
 Correlation Coefficient : 0.45 (Mild Positive Correlation)
+Insight: The more steps one takes the higher the amount of calories burnt!
 ```
 cor.test(final_df$TotalSteps, final_df$Calories, method = 'pearson', conf.level = 0.95)
 ```
