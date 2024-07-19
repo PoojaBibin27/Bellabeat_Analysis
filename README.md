@@ -166,31 +166,6 @@ final_df %>%
 ![Plot-4](https://github.com/user-attachments/assets/d8897514-4a85-4fb0-b324-a0a017e27005)
 
 **Insight- Most of them were only lightly activity. Only 25% of the sample set indulged in heavy activity**
-4. Daily Activity Level
-```
-final_df %>% 
-  select(VeryActiveMinutes, 
-         FairlyActiveMinutes, 
-         LightlyActiveMinutes, 
-         SedentaryMinutes) %>% 
-  summarise(across(everything(), list(sum))) %>% 
-  gather(active_level, minutes) %>% 
-  mutate(active_level = factor(active_level, 
-                               labels = c('Moderate Activity','Light Activity',
-                                          'Sedentary','Heavy Activity'))) %>% 
-  hchart('pie', hcaes(x = active_level, y = minutes)) %>% 
-  hc_title(text = "Distribution of daily activity level in minutes",
-           style = list(fontFamily = "Helvetica", fontSize = "30px"),
-           align = "center") %>% 
-  hc_tooltip(pointFormat = "<b>Value:</b> {point.y} <br>
-                 <b>Percentage</b> {point.percentage:,.2f}%") %>% 
-  hc_credits(
-    enabled = TRUE, 
-    text = "<em>Data Source: FitBit Fitness Tracker Data</em></span>",
-    style = list(fontSize = "12px", color = 'black',type = "spline")
-)
-```
-![image](https://github.com/user-attachments/assets/280a3261-fa29-47f4-b83b-e119a32750fe)
 
 
 5. Sleep Distribution
@@ -221,6 +196,7 @@ final_df %>%
 )
 ```
 ![Plot-6](https://github.com/user-attachments/assets/50104c29-f6c3-4c3e-af19-4ff6f6fd2070)
+**Insight: Most of the people in the datatset had a fairly regular sleep pattern.The ditribution is Gaussian**
 
 6. Daily Use Pattern
 
@@ -274,5 +250,6 @@ daily_use_percent %>%
 ```
 
  ![plot-7](https://github.com/user-attachments/assets/398a1b37-4962-4cfa-b880-3e061a408773)
+ **Inisght: Usage is pretty low. Only 50% use the smart device regularly"
 
 
