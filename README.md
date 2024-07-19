@@ -165,6 +165,7 @@ final_df %>%
 ```
 ![Plot-4](https://github.com/user-attachments/assets/d8897514-4a85-4fb0-b324-a0a017e27005)
 
+**Insight- Most of them were only lightly activity. Only 25% of the sample set indulged in heavy activity**
 4. Daily Activity Level
 ```
 final_df %>% 
@@ -191,7 +192,6 @@ final_df %>%
 ```
 ![image](https://github.com/user-attachments/assets/280a3261-fa29-47f4-b83b-e119a32750fe)
 
-**Insight- Most of them were only lightly activity. Only 25% of the sample set indulged in heavy activity**
 
 5. Sleep Distribution
 ```
