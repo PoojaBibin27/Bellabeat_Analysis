@@ -104,7 +104,7 @@ final_df %>%
 ![Plot-1](https://github.com/user-attachments/assets/0cc9901e-1753-4f11-8202-98069862e43f)
 
 Correlation Coefficient : 0.45 (Mild Positive Correlation)
-Insight: The more steps one takes the higher the amount of calories burnt!
+**Insight: The more steps one takes the higher the amount of calories burnt!**
 ```
 cor.test(final_df$TotalSteps, final_df$Calories, method = 'pearson', conf.level = 0.95)
 ```
@@ -128,8 +128,12 @@ ggplot(weekday_steps, aes(weekday, daily_steps)) +
   theme(axis.text.x = element_text(angle = 45,vjust = 0.5, hjust = 1))
 ```
 ![Plot-2](https://github.com/user-attachments/assets/493b88d2-7d5a-4d60-b941-277af2869674)
+**Insight: Sunday had the least steps taken...way below the avergae recommended amount!Average total steps per day are 7638 which a little bit less for having health benefits for according to the CDC research. They found that taking 8,000 steps per day was associated with a 51% lower risk for all-cause mortality (or death from all causes). Taking 12,000 steps per day was associated with a 65% lower risk compared with taking 4,000 steps.**
+-**Word of Caution: The data is directly dependent on the usage pattern of the device**-
+
 
 3. Intensity of Activity through the week
+
 ```
 final_df %>% 
   select(VeryActiveDistance, 
@@ -186,6 +190,8 @@ final_df %>%
 )
 ```
 ![image](https://github.com/user-attachments/assets/280a3261-fa29-47f4-b83b-e119a32750fe)
+
+**Insight- Most of them were only lightly activity. Only 25% of the sample set indulged in heavy activity**
 
 5. Sleep Distribution
 ```
