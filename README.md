@@ -27,3 +27,14 @@ Primary stakeholders: Urška Sršen and Sando Mur, executive team members.
 
 Secondary stakeholders: Bellabeat marketing analytics team.
 
+## The Preprare Phase
+
+Data Source: 30 participants FitBit Fitness Tracker Data from Mobius: https://www.kaggle.com/arashnic/fitbit. The dataset has 18 CSV files. 
+
+The ROCCC analysis:
+The data is Reliable and Original. However, the sample size is 30. There are a lot of inconsistencies and errors. The weight CSV file is incomplete and has data only for few people. The dataset is recorded for a period of 1 month in 2016. The data is not current. 
+
+
+
+ 
+
