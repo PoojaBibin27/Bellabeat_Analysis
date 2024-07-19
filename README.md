@@ -15,4 +15,7 @@ _The six steps in data analysis process:_
 ### 📋 [Share](#5-share)
 ### 🧗‍♀️ [Act](#6-act)
 
+# Background
+Bellabeat is a high-tech manufacturer of smart health devices for women. They have tasked you with analyzing their device usage data and provide recommendations to the marketing team.
+
 
