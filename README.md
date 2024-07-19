@@ -44,6 +44,31 @@ I did the following preprocessing steps on the data in an Excel Sheet using Powe
 - Created a new column to calculate Average time in Bed not asleep using existing columns
 - Merged all relevant data into a single file and named it the "final_df"
 
+Load data into R STudio, install libraries and view the summary statistics of the dataset:
+
+```
+library(tidyverse)
+library(kableExtra)  
+library(scales)   
+library(highcharter) 
+library(RColorBrewer)  
+library(lubridate)
+```
+To view the dataset
+```
+view(FInal_df)
+head(FInal_df)
+```
+To remove null values 
+```
+final_df <- FInal_df %>%
+  distinct() %>%
+  drop_na()
+```
+To see summary statistics of the dataset
+```
+summary(FInal_df)
+```
 
 
 ## The Analyze Phase
