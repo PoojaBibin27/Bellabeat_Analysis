@@ -196,7 +196,7 @@ final_df %>%
 )
 ```
 ![Plot-6](https://github.com/user-attachments/assets/50104c29-f6c3-4c3e-af19-4ff6f6fd2070)
-**Insight: Most of the people in the datatset had a fairly regular sleep pattern.The ditribution is Gaussian**
+**Insight: Most of the people in the datatset had a fairly regular sleep pattern.The distribution is Gaussian**
 
 6. Daily Use Pattern
 
