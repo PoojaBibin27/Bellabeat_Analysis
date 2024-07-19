@@ -101,6 +101,7 @@ final_df %>%
        x = 'Total Steps',
        caption = 'Data Source: FitBit Fitness Tracker Data')
 ```
+![Plot-1](https://github.com/user-attachments/assets/0cc9901e-1753-4f11-8202-98069862e43f)
 
 
 
