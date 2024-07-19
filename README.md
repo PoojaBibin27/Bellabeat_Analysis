@@ -71,7 +71,6 @@ summary(FInal_df)
 ```
 ## The Analyze Phase
 [Back to Top](#Author-Pooja)
-
 ```
 final_df %>%  
   select(TotalSteps,
@@ -79,12 +78,29 @@ final_df %>%
          SedentaryMinutes, Calories) %>%
   summary()
 ```
-
 High-Level Insights:
 - Average steps taken by the sample dataset is ~8100 steps in a day
 - Average distance covered in a day stood at 5.72 kms
 - Sedentary time spent on an average was 799 minutes (~13 hours)- I guess this included the sleeping time as well
-- Avergae calories consumed in a day was 2323.
+- Average calories consumed in a day was 2323.
+
+1. Steps vs Calories: I have tried to analyse the dataset to see the relation between steps taken in a day and the calories consumed.
+```
+final_df %>% 
+  group_by(TotalSteps, Calories) %>% 
+  ggplot(aes(x = TotalSteps, y = Calories, color = Calories)) +
+  geom_point() +
+  geom_smooth() + 
+  theme(legend.position = c(.8, .3),
+        legend.spacing.y = unit(1, "mm"), 
+        panel.border = element_rect(colour = "black", fill=NA),
+        legend.background = element_blank(),
+        legend.box.background = element_rect(colour = "black")) +
+  labs(title = 'Calories burned by total steps taken',
+       y = 'Calories',
+       x = 'Total Steps',
+       caption = 'Data Source: FitBit Fitness Tracker Data')
+```
 
 
 
