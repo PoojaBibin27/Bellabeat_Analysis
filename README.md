@@ -5,6 +5,8 @@ Google Capstone Project
 
 ##### Date: July 19, 2024
 
+#### [Tableau Dashboard](https://public.tableau.com/app/profile/pooja.bhagaram/viz/BellabeatCaseStudy_17214947666480/CoverPage) 
+
 #
 
 _The six steps in data analysis process:_
